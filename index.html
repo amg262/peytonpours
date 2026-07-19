@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peyton Pours · Private Bartending — Lake Country</title>
+<meta name="description" content="Thoughtful, detail-driven private bar service for dinners, showers, and lake house gatherings in the Lake Country area. Request a custom quote.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:oklch(97% 0.008 60);
+    --card:oklch(99% 0.006 60);
+    --blush:oklch(85% 0.06 22);
+    --rose:oklch(72% 0.1 20);
+    --wine:oklch(48% 0.14 18);
+    --wine-dark:oklch(38% 0.13 15);
+    --plum:oklch(30% 0.05 20);
+    --muted:oklch(38% 0.06 20);
+    --label:oklch(50% 0.09 20);
+    --olive:oklch(72% 0.1 130);
+    --border:oklch(88% 0.02 40);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--plum);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--wine);text-decoration:none;}
+  a:hover{color:var(--wine-dark);}
+  input,textarea{font-family:'Work Sans',sans-serif;}
+  input:focus,textarea:focus{outline:none;border-color:var(--wine);}
+  input::placeholder,textarea::placeholder{color:oklch(62% 0.04 30);}
+  .hero{max-width:640px;margin:0 auto;padding:96px 32px 56px;text-align:center;}
+  .wordmark{font-family:'Cormorant Garamond',serif;font-size:52px;line-height:1.05;margin-bottom:8px;}
+  .tagline{font-size:12px;letter-spacing:0.22em;color:var(--label);text-transform:uppercase;margin-bottom:28px;}
+  .lede{font-size:17px;line-height:1.75;color:var(--muted);}
+  .form-wrap{max-width:520px;margin:0 auto;padding:0 32px 96px;}
+  .card{background:var(--card);border-radius:8px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid oklch(92% 0.015 40);}
+  .card h2{font-family:'Cormorant Garamond',serif;font-size:26px;margin:0 0 20px;font-weight:500;}
+  form{display:flex;flex-direction:column;gap:16px;}
+  .row{display:flex;gap:12px;}
+  input,textarea{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:14px;border:1px solid var(--border);border-radius:4px;background:oklch(98% 0.006 60);color:var(--plum);}
+  textarea{resize:vertical;}
+  button{background:var(--wine);color:oklch(98% 0.006 60);border:none;padding:14px;border-radius:4px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;font-weight:600;transition:background .15s;}
+  button:hover{background:var(--wine-dark);}
+  .direct{text-align:center;font-size:13px;color:var(--label);margin-top:24px;}
+  .thanks{text-align:center;padding:24px 0;}
+  .thanks h2{font-family:'Cormorant Garamond',serif;font-size:30px;margin:0 0 10px;font-weight:500;}
+  .thanks p{font-size:15px;line-height:1.7;color:var(--muted);margin:0;}
+  footer{border-top:1px solid oklch(90% 0.02 30);padding:24px 32px;text-align:center;font-size:12px;color:var(--label);}
+  @media(max-width:480px){.wordmark{font-size:42px;}.hero{padding-top:72px;}.row{flex-direction:column;}}
+</style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <svg width="52" height="60" viewBox="0 0 120 140" style="margin-bottom:20px;" aria-hidden="true">
+        <path d="M20 18 L100 18 L60 70 Z" fill="oklch(85% 0.06 22)" stroke="oklch(48% 0.14 18)" stroke-width="6" stroke-linejoin="round"/>
+        <line x1="60" y1="70" x2="60" y2="118" stroke="oklch(48% 0.14 18)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="34" y1="118" x2="86" y2="118" stroke="oklch(48% 0.14 18)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="60" y1="34" x2="86" y2="8" stroke="oklch(58% 0.16 20)" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="88" cy="6" r="7" fill="oklch(72% 0.1 130)"/>
+      </svg>
+      <h1 class="wordmark">Peyton Pours</h1>
+      <div class="tagline">Private Bartending · Lake Country</div>
+      <p class="lede">Thoughtful, detail-driven bar service for private dinners, showers, and lake house gatherings. Tell me about your event and I'll be in touch with a custom quote.</p>
+    </section>
+
+    <section class="form-wrap">
+      <div class="card">
+        <div id="form-view">
+          <h2>Let's plan your gathering</h2>
+          <form id="inquiry" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="row">
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="tel" name="phone" placeholder="Phone">
+            </div>
+            <input type="email" name="email" placeholder="Email" required>
+            <div class="row">
+              <input type="text" name="event_date" placeholder="Event date">
+              <input type="text" name="guest_count" placeholder="Guest count">
+            </div>
+            <textarea name="details" rows="4" placeholder="Tell me a little about your event"></textarea>
+            <button type="submit">Send Inquiry</button>
+          </form>
+        </div>
+        <div id="thanks-view" class="thanks" style="display:none;">
+          <h2>Thank you.</h2>
+          <p>Your message is on its way. Peyton will follow up within a couple of days.</p>
+        </div>
+      </div>
+      <p class="direct">Prefer to reach out directly? <a href="mailto:hello@peytonpours.com">hello@peytonpours.com</a> · (555) 019-2244</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Peyton Pours · Serving the Lake Country area</footer>
+
+  <script>
+    const form = document.getElementById('inquiry');
+    form.addEventListener('submit', async (e) => {
+      // If Formspree isn't configured yet, just show the thank-you state.
+      if (form.action.includes('your-form-id')) {
+        e.preventDefault();
+        document.getElementById('form-view').style.display = 'none';
+        document.getElementById('thanks-view').style.display = 'block';
+        return;
+      }
+      e.preventDefault();
+      try {
+        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} });
+        if (res.ok) {
+          document.getElementById('form-view').style.display = 'none';
+          document.getElementById('thanks-view').style.display = 'block';
+        } else { form.submit(); }
+      } catch { form.submit(); }
+    });
+  </script>
+</body>
+</html>
