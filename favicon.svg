@@ -1,8 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130">
-  <circle cx="65" cy="65" r="60" fill="oklch(93% 0.04 20)" stroke="oklch(48% 0.14 18)" stroke-width="2.5"></circle>
-  <path d="M45 42 L85 42 L65 68 Z" fill="oklch(85% 0.06 22)" stroke="oklch(48% 0.14 18)" stroke-width="4.5" stroke-linejoin="round"></path>
-  <line x1="65" y1="68" x2="65" y2="90" stroke="oklch(48% 0.14 18)" stroke-width="4.5" stroke-linecap="round"></line>
-  <line x1="54" y1="90" x2="76" y2="90" stroke="oklch(48% 0.14 18)" stroke-width="4.5" stroke-linecap="round"></line>
-  <line x1="72" y1="50" x2="85" y2="37" stroke="oklch(58% 0.16 20)" stroke-width="3" stroke-linecap="round"></line>
-  <circle cx="86" cy="35" r="5" fill="oklch(72% 0.1 130)"></circle>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130">
+        <circle cx="65" cy="65" r="60" fill="oklch(93% 0.04 20)" stroke="oklch(52% 0.2 8)" stroke-width="2.5"></circle>
+        <g transform="translate(15.5,11) scale(0.66)">
+        <defs>
+          <linearGradient id="liqB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="oklch(86% 0.11 10)"></stop><stop offset="1" stop-color="oklch(68% 0.17 6)"></stop></linearGradient>
+          <linearGradient id="glassB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="oklch(48% 0.015 250)"></stop><stop offset="0.5" stop-color="oklch(60% 0.012 250)"></stop><stop offset="1" stop-color="oklch(44% 0.015 250)"></stop></linearGradient>
+          <linearGradient id="lemB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="oklch(92% 0.15 100)"></stop><stop offset="1" stop-color="oklch(80% 0.17 92)"></stop></linearGradient>
+        </defs>
+        <ellipse cx="75" cy="150" rx="30" ry="7" fill="oklch(45% 0.02 250 / 0.2)"></ellipse>
+        <ellipse cx="75" cy="36" rx="49" ry="11" fill="oklch(88% 0.13 10)"></ellipse>
+        <path d="M27 37 Q75 52 123 37 L75 92 Z" fill="url(#liqB)"></path>
+        <circle cx="64" cy="52" r="3" fill="oklch(97% 0.02 10 / 0.85)"></circle>
+        <circle cx="83" cy="58" r="2.3" fill="oklch(97% 0.02 10 / 0.8)"></circle>
+        <circle cx="72" cy="66" r="1.9" fill="oklch(97% 0.02 10 / 0.75)"></circle>
+        <circle cx="88" cy="47" r="1.5" fill="oklch(97% 0.02 10 / 0.7)"></circle>
+        <path d="M23 34 A52 12 0 0 1 127 34" fill="none" stroke="oklch(72% 0.01 250)" stroke-width="4"></path>
+        <path d="M23 34 A52 12 0 0 0 127 34" fill="none" stroke="url(#glassB)" stroke-width="6" stroke-linecap="round"></path>
+        <path d="M24 35 L75 94" fill="none" stroke="oklch(48% 0.015 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M75 94 L126 35" fill="none" stroke="oklch(56% 0.013 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+        <line x1="75" y1="94" x2="75" y2="150" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"></line>
+        <path d="M50 152 Q75 145 100 152" fill="none" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"></path>
+        <ellipse cx="75" cy="150" rx="25" ry="4" fill="none" stroke="oklch(64% 0.012 250 / 0.5)" stroke-width="2"></ellipse>
+        <path d="M40 40 L66 76" fill="none" stroke="oklch(99% 0.005 250 / 0.9)" stroke-width="3.5" stroke-linecap="round"></path>
+        <path d="M47 41 L57 56" fill="none" stroke="oklch(99% 0.005 250 / 0.5)" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M96 20 C118 14 120 44 102 46 C90 47 90 32 100 32 C106 32 106 40 101 40" fill="none" stroke="url(#lemB)" stroke-width="6" stroke-linecap="round"></path>
+        <path d="M99 23 C114 19 116 40 103 42" fill="none" stroke="oklch(97% 0.08 102 / 0.7)" stroke-width="2" stroke-linecap="round"></path></g>
+      </svg>

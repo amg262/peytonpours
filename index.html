@@ -11,17 +11,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:oklch(97% 0.008 60);
+    --cream:oklch(96% 0.01 60);
     --card:oklch(99% 0.006 60);
     --blush:oklch(85% 0.06 22);
     --rose:oklch(72% 0.1 20);
-    --wine:oklch(48% 0.14 18);
-    --wine-dark:oklch(38% 0.13 15);
-    --plum:oklch(30% 0.05 20);
+    --wine:oklch(52% 0.2 8);
+    --wine-dark:oklch(44% 0.2 8);
+    --button:oklch(62% 0.19 8);
+    --button-dark:oklch(53% 0.19 8);
+    --plum:oklch(30% 0.012 265);
     --muted:oklch(38% 0.06 20);
     --label:oklch(50% 0.09 20);
     --olive:oklch(72% 0.1 130);
     --border:oklch(88% 0.02 40);
+    --yellow:oklch(86% 0.15 95);
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--cream);color:var(--plum);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
@@ -32,7 +35,7 @@
   input::placeholder,textarea::placeholder{color:oklch(62% 0.04 30);}
   .hero{max-width:640px;margin:0 auto;padding:96px 32px 56px;text-align:center;}
   .wordmark{font-family:'Cormorant Garamond',serif;font-size:52px;line-height:1.05;margin-bottom:8px;}
-  .tagline{font-size:12px;letter-spacing:0.22em;color:var(--label);text-transform:uppercase;margin-bottom:28px;}
+  .tagline{font-size:12px;letter-spacing:0.22em;color:var(--wine);text-transform:uppercase;margin-bottom:28px;}
   .lede{font-size:17px;line-height:1.75;color:var(--muted);}
   .form-wrap{max-width:520px;margin:0 auto;padding:0 32px 96px;}
   .card{background:var(--card);border-radius:8px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid oklch(92% 0.015 40);}
@@ -41,29 +44,47 @@
   .row{display:flex;gap:12px;}
   input,textarea{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:14px;border:1px solid var(--border);border-radius:4px;background:oklch(98% 0.006 60);color:var(--plum);}
   textarea{resize:vertical;}
-  button{background:var(--wine);color:oklch(98% 0.006 60);border:none;padding:14px;border-radius:4px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;font-weight:600;transition:background .15s;}
-  button:hover{background:var(--wine-dark);}
+  button{background:var(--button);color:oklch(98% 0.006 60);border:none;padding:14px;border-radius:4px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;font-weight:600;transition:background .15s;}
+  button:hover{background:var(--button-dark);}
   .direct{text-align:center;font-size:13px;color:var(--label);margin-top:24px;}
   .thanks{text-align:center;padding:24px 0;}
   .thanks h2{font-family:'Cormorant Garamond',serif;font-size:30px;margin:0 0 10px;font-weight:500;}
   .thanks p{font-size:15px;line-height:1.7;color:var(--muted);margin:0;}
-  footer{border-top:1px solid oklch(90% 0.02 30);padding:24px 32px;text-align:center;font-size:12px;color:var(--label);}
+  footer{padding:24px 32px;text-align:center;font-size:12px;color:var(--plum);}
   @media(max-width:480px){.wordmark{font-size:42px;}.hero{padding-top:72px;}.row{flex-direction:column;}}
 </style>
 </head>
 <body>
   <main>
     <section class="hero">
-      <svg width="52" height="60" viewBox="0 0 120 140" style="margin-bottom:20px;" aria-hidden="true">
-        <path d="M20 18 L100 18 L60 70 Z" fill="oklch(85% 0.06 22)" stroke="oklch(48% 0.14 18)" stroke-width="6" stroke-linejoin="round"/>
-        <line x1="60" y1="70" x2="60" y2="118" stroke="oklch(48% 0.14 18)" stroke-width="6" stroke-linecap="round"/>
-        <line x1="34" y1="118" x2="86" y2="118" stroke="oklch(48% 0.14 18)" stroke-width="6" stroke-linecap="round"/>
-        <line x1="60" y1="34" x2="86" y2="8" stroke="oklch(58% 0.16 20)" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="88" cy="6" r="7" fill="oklch(72% 0.1 130)"/>
+      <svg width="122" height="146" viewBox="0 0 150 180" style="margin-bottom:20px;" aria-hidden="true">
+        <defs>
+          <linearGradient id="liqSI" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="oklch(86% 0.11 10)"/><stop offset="1" stop-color="oklch(68% 0.17 6)"/></linearGradient>
+          <linearGradient id="glassSI" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="oklch(48% 0.015 250)"/><stop offset="0.5" stop-color="oklch(60% 0.012 250)"/><stop offset="1" stop-color="oklch(44% 0.015 250)"/></linearGradient>
+          <linearGradient id="lemSI" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="oklch(92% 0.15 100)"/><stop offset="1" stop-color="oklch(80% 0.17 92)"/></linearGradient>
+        </defs>
+        <ellipse cx="75" cy="150" rx="30" ry="7" fill="oklch(45% 0.02 250 / 0.2)"/>
+        <ellipse cx="75" cy="36" rx="49" ry="11" fill="oklch(88% 0.13 10)"/>
+        <path d="M27 37 Q75 52 123 37 L75 92 Z" fill="url(#liqSI)"/>
+        <circle cx="64" cy="52" r="3" fill="oklch(97% 0.02 10 / 0.85)"/>
+        <circle cx="83" cy="58" r="2.3" fill="oklch(97% 0.02 10 / 0.8)"/>
+        <circle cx="72" cy="66" r="1.9" fill="oklch(97% 0.02 10 / 0.75)"/>
+        <circle cx="88" cy="47" r="1.5" fill="oklch(97% 0.02 10 / 0.7)"/>
+        <path d="M23 34 A52 12 0 0 1 127 34" fill="none" stroke="oklch(72% 0.01 250)" stroke-width="4"/>
+        <path d="M23 34 A52 12 0 0 0 127 34" fill="none" stroke="url(#glassSI)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M24 35 L75 94" fill="none" stroke="oklch(48% 0.015 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M75 94 L126 35" fill="none" stroke="oklch(56% 0.013 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="75" y1="94" x2="75" y2="150" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M50 152 Q75 145 100 152" fill="none" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"/>
+        <ellipse cx="75" cy="150" rx="25" ry="4" fill="none" stroke="oklch(64% 0.012 250 / 0.5)" stroke-width="2"/>
+        <path d="M40 40 L66 76" fill="none" stroke="oklch(99% 0.005 250 / 0.9)" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M47 41 L57 56" fill="none" stroke="oklch(99% 0.005 250 / 0.5)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M96 20 C118 14 120 44 102 46 C90 47 90 32 100 32 C106 32 106 40 101 40" fill="none" stroke="url(#lemSI)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M99 23 C114 19 116 40 103 42" fill="none" stroke="oklch(97% 0.08 102 / 0.7)" stroke-width="2" stroke-linecap="round"/>
       </svg>
       <h1 class="wordmark">Peyton Pours</h1>
-      <div class="tagline">Private Bartending · Lake Country</div>
-      <p class="lede">Thoughtful, detail-driven bar service for private dinners, showers, and lake house gatherings. Tell me about your event and I'll be in touch with a custom quote.</p>
+      <div class="tagline">White-Glove Bartending · Private Events</div>
+      <p class="lede">Thoughtful, detail-driven bar service for private parties, showers, and lake house gatherings in the Lake Country area. Tell me about your event and I'll be in touch with a custom quote.</p>
     </section>
 
     <section class="form-wrap">
@@ -89,11 +110,10 @@
           <p>Your message is on its way. Peyton will follow up within a couple of days.</p>
         </div>
       </div>
-      <p class="direct">Prefer to reach out directly? <a href="mailto:hello@peytonpours.com">hello@peytonpours.com</a> · (555) 019-2244</p>
     </section>
   </main>
 
-  <footer>© 2026 Peyton Pours · Serving the Lake Country area</footer>
+  <footer><a href="mailto:peytonpours@gmail.com">peytonpours@gmail.com</a> · © 2026 Peyton Pours</footer>
 
   <script>
     const form = document.getElementById('inquiry');

@@ -12,6 +12,7 @@ Static one-page site. No build step.
 
 ## Contact form
 The form currently shows a "thank you" state without sending anywhere.
-To receive submissions by email, create a free form at https://formspree.io, then
-replace `your-form-id` in `index.html` (the `action="https://formspree.io/f/your-form-id"`)
-with your real Formspree endpoint. No other changes needed.
+To receive submissions at peytonpours@gmail.com, create a free form at https://formspree.io
+(point it at that address), then replace `your-form-id` in `index.html`
+(the `action="https://formspree.io/f/your-form-id"`) with your real Formspree endpoint.
+No other changes needed.
