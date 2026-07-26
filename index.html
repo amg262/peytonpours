@@ -131,16 +131,69 @@
   .lb img{max-width:min(100%,900px);max-height:100%;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:default;}
   .lb-close{position:absolute;top:18px;right:22px;background:none;border:none;color:oklch(96% 0.01 60);font-size:30px;line-height:1;cursor:pointer;padding:6px 10px;}
 
+  /* ---- falling lemon twists ---- */
+  /* z-index:-1 keeps them above the cream canvas but behind every card and
+     block of copy, so they drift through the open space and never touch text. */
+  .lemon-fall{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+  .lemon-fall span{position:absolute;top:0;left:var(--x);animation:lemon-drop var(--d) linear var(--delay) infinite;}
+  .lemon-fall svg{display:block;width:calc(34px * var(--s));height:calc(36px * var(--s));opacity:var(--o);animation:lemon-spin calc(var(--d) / 2.5) ease-in-out var(--delay) infinite;}
+  @keyframes lemon-drop{
+    0%{transform:translate3d(0,-14vh,0);}
+    25%{transform:translate3d(16px,17vh,0);}
+    50%{transform:translate3d(-8px,48vh,0);}
+    75%{transform:translate3d(20px,79vh,0);}
+    100%{transform:translate3d(2px,114vh,0);}
+  }
+  @keyframes lemon-spin{
+    0%{transform:rotate(-20deg);}
+    50%{transform:rotate(26deg);}
+    100%{transform:rotate(-20deg);}
+  }
+
   @media(max-width:560px){
     .wrap,.hero,.form-wrap{padding-left:22px;padding-right:22px;}
     section{padding:64px 0;}
     .card-form{padding:30px 24px;}
     .row{flex-direction:column;}
+    .lemon-fall span:nth-child(even){display:none;} /* halve the density on phones */
   }
-  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+  /* Falling elements are a vestibular trigger — drop the whole layer, don't just slow it. */
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}.lemon-fall{display:none;}}
 </style>
 </head>
 <body>
+
+<!-- The lemon twist from the logo mark, defined once and reused below. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lemFall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="oklch(92% 0.15 100)"/>
+      <stop offset="1" stop-color="oklch(80% 0.17 92)"/>
+    </linearGradient>
+    <symbol id="lemon-twist" viewBox="86 10 38 40">
+      <path d="M96 20 C118 14 120 44 102 46 C90 47 90 32 100 32 C106 32 106 40 101 40" fill="none" stroke="url(#lemFall)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M99 23 C114 19 116 40 103 42" fill="none" stroke="oklch(97% 0.08 102 / 0.7)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Negative animation delays stagger the cascade so it's already mid-fall on load. -->
+<div class="lemon-fall" aria-hidden="true">
+  <span style="--x:4%;--s:.62;--o:.34;--d:24s;--delay:-2s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:11%;--s:.95;--o:.50;--d:18s;--delay:-9s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:19%;--s:.50;--o:.28;--d:29s;--delay:-14s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:27%;--s:.80;--o:.42;--d:21s;--delay:-5s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:34%;--s:.58;--o:.30;--d:26s;--delay:-19s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:42%;--s:1.05;--o:.50;--d:17s;--delay:-11s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:49%;--s:.66;--o:.36;--d:23s;--delay:-1s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:57%;--s:.85;--o:.45;--d:20s;--delay:-16s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:64%;--s:.54;--o:.30;--d:28s;--delay:-7s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:72%;--s:.92;--o:.48;--d:19s;--delay:-22s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:79%;--s:.60;--o:.33;--d:25s;--delay:-4s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:86%;--s:.75;--o:.40;--d:22s;--delay:-13s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:92%;--s:.48;--o:.26;--d:30s;--delay:-18s"><svg><use href="#lemon-twist"/></svg></span>
+  <span style="--x:97%;--s:.88;--o:.44;--d:18s;--delay:-8s"><svg><use href="#lemon-twist"/></svg></span>
+</div>
 
 <nav id="nav">
   <div class="nav-in">
