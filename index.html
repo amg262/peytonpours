@@ -3,95 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peyton Pours · Private Bartending — Lake Country</title>
-<meta name="description" content="Thoughtful, detail-driven private bar service for dinners, showers, and intimate gatherings in the Lake Country area. Request a custom quote.">
+<title>Peyton Pours · White-Glove Bartending &amp; Event Design — Lake Country, WI</title>
+<meta name="description" content="Private bar service and custom party design for Wisconsin's Lake Country. Cocktail menus, signage and printed details designed to your theme — poured and styled by the same hands.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Peyton Pours · White-Glove Bartending &amp; Event Design">
+<meta property="og:description" content="Private bar service and custom party design for Wisconsin's Lake Country.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:oklch(96% 0.01 60);
     --card:oklch(99% 0.006 60);
-    --blush:oklch(85% 0.06 22);
-    --rose:oklch(72% 0.1 20);
-    --wine:oklch(52% 0.2 8);
-    --wine-dark:oklch(44% 0.2 8);
+    --charcoal:oklch(30% 0.012 265);
+    --pink:oklch(53% 0.19 8);
+    --pink-deep:oklch(44% 0.2 8);
     --button:oklch(62% 0.19 8);
     --button-dark:oklch(53% 0.19 8);
-    --plum:oklch(30% 0.012 265);
-    --muted:oklch(38% 0.06 20);
-    --label:oklch(50% 0.09 20);
-    --olive:oklch(72% 0.1 130);
+    --blush:oklch(93% 0.045 18);
+    --rose:oklch(72% 0.1 20);
+    --lemon:oklch(86% 0.15 95);
+    --muted:oklch(50% 0.05 20);
     --border:oklch(88% 0.02 40);
-    --yellow:oklch(86% 0.15 95);
+    --ink:oklch(20% 0.03 250);
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--cream);color:var(--plum);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
-  a{color:var(--wine);text-decoration:none;}
-  a:hover{color:var(--wine-dark);}
-  input,textarea{font-family:'Work Sans',sans-serif;}
-  input:focus,textarea:focus{outline:none;border-color:var(--wine);}
-  input::placeholder,textarea::placeholder{color:oklch(62% 0.04 30);}
-  .hero{max-width:640px;margin:0 auto;padding:96px 32px 56px;text-align:center;}
-  .wordmark{font-family:'Cormorant Garamond',serif;font-size:52px;line-height:1.05;margin-bottom:8px;}
-  .tagline{font-size:12px;letter-spacing:0.22em;color:var(--wine);text-transform:uppercase;margin-bottom:28px;}
-  .lede{font-size:17px;line-height:1.75;color:var(--muted);}
-  .form-wrap{max-width:520px;margin:0 auto;padding:0 32px 96px;}
-  .card{background:var(--card);border-radius:8px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid oklch(92% 0.015 40);}
-  .card h2{font-family:'Cormorant Garamond',serif;font-size:26px;margin:0 0 20px;font-weight:500;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--charcoal);font-family:'Work Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:var(--pink);text-decoration:none;}
+  a:hover{color:var(--pink-deep);}
+  img{max-width:100%;height:auto;display:block;}
+  :focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:2px;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  .kicker{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--pink);margin:0 0 12px;font-weight:600;}
+  h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(30px,4.4vw,42px);margin:0 0 14px;line-height:1.12;}
+  .section-lede{font-size:16.5px;line-height:1.75;color:var(--muted);max-width:620px;margin:0;text-wrap:pretty;}
+  section{padding:84px 0;border-top:1px solid var(--border);}
+
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:40;background:oklch(96% 0.01 60 / 0.88);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s;}
+  nav.stuck{border-bottom-color:var(--border);}
+  .nav-in{max-width:1080px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .nav-brand{display:flex;align-items:center;gap:9px;font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:var(--charcoal);}
+  .nav-brand img{width:22px;}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;}
+  .nav-links a{color:var(--muted);}
+  .nav-links a:hover{color:var(--pink);}
+  .nav-links .btn-sm{background:var(--button);color:oklch(98% 0.006 60);padding:9px 18px;border-radius:4px;font-weight:600;}
+  .nav-links .btn-sm:hover{background:var(--button-dark);color:oklch(98% 0.006 60);}
+  @media(max-width:640px){.nav-links a:not(.btn-sm){display:none;}}
+
+  /* ---- hero ---- */
+  .hero{max-width:700px;margin:0 auto;padding:76px 32px 66px;text-align:center;}
+  .hero svg{margin:0 auto 22px;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.18));}
+  .wordmark{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(44px,8vw,58px);line-height:1.04;margin:0 0 10px;font-weight:500;}
+  .tagline{font-size:12px;letter-spacing:0.22em;color:var(--pink);text-transform:uppercase;margin-bottom:26px;font-weight:600;}
+  .lede{font-size:18px;line-height:1.72;color:var(--muted);margin:0 0 32px;text-wrap:pretty;}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;background:var(--button);color:oklch(98% 0.006 60);padding:14px 28px;border-radius:4px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;transition:background .15s;border:none;cursor:pointer;}
+  .btn:hover{background:var(--button-dark);color:oklch(98% 0.006 60);}
+  .btn-ghost{background:transparent;color:var(--pink);border:1px solid var(--border);}
+  .btn-ghost:hover{background:var(--blush);color:var(--pink-deep);border-color:var(--rose);}
+
+  /* ---- services ---- */
+  .services{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:38px;}
+  .svc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:32px 30px;display:flex;flex-direction:column;position:relative;}
+  .svc-num{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:26px;color:var(--rose);line-height:1;margin-bottom:14px;}
+  .svc h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:25px;margin:0 0 10px;line-height:1.2;}
+  .svc p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 16px;text-wrap:pretty;}
+  .svc ul{list-style:none;padding:0;margin:auto 0 0;display:grid;gap:7px;}
+  .svc li{font-size:13.5px;color:var(--muted);padding-left:16px;position:relative;line-height:1.5;}
+  .svc li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--lemon);}
+  .pill{position:absolute;top:20px;right:22px;background:var(--lemon);color:oklch(38% 0.08 85);font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:99px;}
+
+  /* ---- work ---- */
+  .work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;}
+  .pair{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:40px;}
+  .piece figure{margin:0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .piece img{border-radius:3px;cursor:zoom-in;transition:opacity .15s;}
+  .piece img:hover{opacity:.9;}
+  .piece figcaption{margin-top:16px;padding:0 4px 4px;}
+  .piece figcaption b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;margin-bottom:5px;}
+  .piece figcaption span{font-size:13.5px;line-height:1.6;color:var(--muted);display:block;text-wrap:pretty;}
+  .note{margin:30px 0 0;font-size:14.5px;line-height:1.75;color:var(--muted);max-width:660px;text-wrap:pretty;}
+
+  /* ---- brand proof ---- */
+  .proof{display:grid;gap:26px;grid-template-columns:1fr 1.15fr;align-items:center;margin-top:40px;}
+  @media(max-width:760px){.proof{grid-template-columns:1fr;}}
+  .proof-shot{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .proof-shot img{border-radius:3px;cursor:zoom-in;}
+  .cards4{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .cards4 img{border-radius:4px;border:1px solid var(--border);cursor:zoom-in;}
+  .swatches{display:flex;gap:0;margin-top:26px;border-radius:6px;overflow:hidden;border:1px solid var(--border);}
+  .swatches div{height:44px;flex:1;}
+
+  /* ---- form ---- */
+  .form-wrap{max-width:560px;margin:0 auto;padding:0 32px;}
+  .card-form{background:var(--card);border-radius:8px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid var(--border);}
+  .card-form h2{font-size:28px;margin:0 0 6px;text-align:center;}
+  .card-form .sub{text-align:center;font-size:14.5px;color:var(--muted);margin:0 0 26px;line-height:1.6;}
   form{display:flex;flex-direction:column;gap:16px;}
   .row{display:flex;gap:12px;}
-  input,textarea{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:14px;border:1px solid var(--border);border-radius:4px;background:oklch(98% 0.006 60);color:var(--plum);}
+  input,textarea,select{font-family:'Work Sans',sans-serif;flex:1;min-width:0;width:100%;padding:12px 14px;font-size:14px;border:1px solid var(--border);border-radius:4px;background:oklch(98% 0.006 60);color:var(--charcoal);}
   textarea{resize:vertical;}
-  button{background:var(--button);color:oklch(98% 0.006 60);border:none;padding:14px;border-radius:4px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;font-weight:600;transition:background .15s;}
-  button:hover{background:var(--button-dark);}
-  .direct{text-align:center;font-size:13px;color:var(--label);margin-top:24px;}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--pink);}
+  input::placeholder,textarea::placeholder{color:oklch(62% 0.04 30);}
+  fieldset{border:none;padding:0;margin:0;}
+  legend{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px;padding:0;}
+  .checks{display:flex;flex-wrap:wrap;gap:8px;}
+  .checks label{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted);background:oklch(98% 0.006 60);border:1px solid var(--border);border-radius:99px;padding:8px 14px;cursor:pointer;transition:all .15s;}
+  .checks input{width:auto;flex:none;margin:0;accent-color:var(--pink);}
+  .checks label:has(input:checked){border-color:var(--rose);background:var(--blush);color:var(--pink-deep);}
+  .direct{text-align:center;font-size:13px;color:var(--muted);margin-top:24px;}
   .thanks{text-align:center;padding:24px 0;}
-  .thanks h2{font-family:'Cormorant Garamond',serif;font-size:30px;margin:0 0 10px;font-weight:500;}
+  .thanks h2{font-size:30px;margin:0 0 10px;}
   .thanks p{font-size:15px;line-height:1.7;color:var(--muted);margin:0;}
-  footer{padding:24px 32px;text-align:center;font-size:12px;color:var(--plum);}
-  @media(max-width:480px){.wordmark{font-size:42px;}.hero{padding-top:72px;}.row{flex-direction:column;}}
+
+  footer{padding:56px 32px 64px;text-align:center;font-size:13px;color:var(--muted);border-top:1px solid var(--border);}
+  footer .fmark{width:30px;margin:0 auto 16px;opacity:.75;}
+  footer a{color:var(--pink);}
+
+  /* ---- lightbox ---- */
+  .lb{position:fixed;inset:0;z-index:90;background:oklch(20% 0.02 250 / 0.92);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out;}
+  .lb.open{display:flex;}
+  .lb img{max-width:min(100%,900px);max-height:100%;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:default;}
+  .lb-close{position:absolute;top:18px;right:22px;background:none;border:none;color:oklch(96% 0.01 60);font-size:30px;line-height:1;cursor:pointer;padding:6px 10px;}
+
+  @media(max-width:560px){
+    .wrap,.hero,.form-wrap{padding-left:22px;padding-right:22px;}
+    section{padding:64px 0;}
+    .card-form{padding:30px 24px;}
+    .row{flex-direction:column;}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
 </style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <svg width="122" height="146" viewBox="0 0 150 180" style="margin-bottom:20px;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.18));" aria-hidden="true">
-        <defs>
-          <linearGradient id="liqSI" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="oklch(86% 0.11 10)"/><stop offset="1" stop-color="oklch(68% 0.17 6)"/></linearGradient>
-          <linearGradient id="glassSI" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="oklch(48% 0.015 250)"/><stop offset="0.5" stop-color="oklch(60% 0.012 250)"/><stop offset="1" stop-color="oklch(44% 0.015 250)"/></linearGradient>
-          <linearGradient id="lemSI" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="oklch(92% 0.15 100)"/><stop offset="1" stop-color="oklch(80% 0.17 92)"/></linearGradient>
-        </defs>
-        <ellipse cx="75" cy="150" rx="30" ry="7" fill="oklch(45% 0.02 250 / 0.2)"/>
-        <ellipse cx="75" cy="36" rx="49" ry="11" fill="oklch(88% 0.13 10)"/>
-        <path d="M27 37 Q75 52 123 37 L75 92 Z" fill="url(#liqSI)"/>
-        <circle cx="64" cy="52" r="3" fill="oklch(97% 0.02 10 / 0.85)"/>
-        <circle cx="83" cy="58" r="2.3" fill="oklch(97% 0.02 10 / 0.8)"/>
-        <circle cx="72" cy="66" r="1.9" fill="oklch(97% 0.02 10 / 0.75)"/>
-        <circle cx="88" cy="47" r="1.5" fill="oklch(97% 0.02 10 / 0.7)"/>
-        <path d="M23 34 A52 12 0 0 1 127 34" fill="none" stroke="oklch(72% 0.01 250)" stroke-width="4"/>
-        <path d="M23 34 A52 12 0 0 0 127 34" fill="none" stroke="url(#glassSI)" stroke-width="6" stroke-linecap="round"/>
-        <path d="M24 35 L75 94" fill="none" stroke="oklch(48% 0.015 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M75 94 L126 35" fill="none" stroke="oklch(56% 0.013 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="75" y1="94" x2="75" y2="150" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"/>
-        <path d="M50 152 Q75 145 100 152" fill="none" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"/>
-        <ellipse cx="75" cy="150" rx="25" ry="4" fill="none" stroke="oklch(64% 0.012 250 / 0.5)" stroke-width="2"/>
-        <path d="M40 40 L66 76" fill="none" stroke="oklch(99% 0.005 250 / 0.9)" stroke-width="3.5" stroke-linecap="round"/>
-        <path d="M47 41 L57 56" fill="none" stroke="oklch(99% 0.005 250 / 0.5)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M96 20 C118 14 120 44 102 46 C90 47 90 32 100 32 C106 32 106 40 101 40" fill="none" stroke="url(#lemSI)" stroke-width="6" stroke-linecap="round"/>
-        <path d="M99 23 C114 19 116 40 103 42" fill="none" stroke="oklch(97% 0.08 102 / 0.7)" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h1 class="wordmark">Peyton Pours</h1>
-      <div class="tagline">White-Glove Bartending · Private Events</div>
-      <p class="lede">Thoughtful, detail-driven bar service for private parties, showers, and intimate gatherings in the Lake Country area. Tell me about your event and I'll be in touch with a custom quote.</p>
-    </section>
 
-    <section class="form-wrap">
-      <div class="card">
+<nav id="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="#top"><img src="assets/logo/martini-mark.svg" alt="">Peyton Pours</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#inquire" class="btn-sm">Inquire</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="border-top:none;">
+    <svg width="122" height="146" viewBox="0 0 150 180" aria-hidden="true">
+      <defs>
+        <linearGradient id="liqSI" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="oklch(86% 0.11 10)"/><stop offset="1" stop-color="oklch(68% 0.17 6)"/></linearGradient>
+        <linearGradient id="glassSI" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="oklch(48% 0.015 250)"/><stop offset="0.5" stop-color="oklch(60% 0.012 250)"/><stop offset="1" stop-color="oklch(44% 0.015 250)"/></linearGradient>
+        <linearGradient id="lemSI" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="oklch(92% 0.15 100)"/><stop offset="1" stop-color="oklch(80% 0.17 92)"/></linearGradient>
+      </defs>
+      <ellipse cx="75" cy="150" rx="30" ry="7" fill="oklch(45% 0.02 250 / 0.2)"/>
+      <ellipse cx="75" cy="36" rx="49" ry="11" fill="oklch(88% 0.13 10)"/>
+      <path d="M27 37 Q75 52 123 37 L75 92 Z" fill="url(#liqSI)"/>
+      <circle cx="64" cy="52" r="3" fill="oklch(97% 0.02 10 / 0.85)"/>
+      <circle cx="83" cy="58" r="2.3" fill="oklch(97% 0.02 10 / 0.8)"/>
+      <circle cx="72" cy="66" r="1.9" fill="oklch(97% 0.02 10 / 0.75)"/>
+      <circle cx="88" cy="47" r="1.5" fill="oklch(97% 0.02 10 / 0.7)"/>
+      <path d="M23 34 A52 12 0 0 1 127 34" fill="none" stroke="oklch(72% 0.01 250)" stroke-width="4"/>
+      <path d="M23 34 A52 12 0 0 0 127 34" fill="none" stroke="url(#glassSI)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M24 35 L75 94" fill="none" stroke="oklch(48% 0.015 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M75 94 L126 35" fill="none" stroke="oklch(56% 0.013 250)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="75" y1="94" x2="75" y2="150" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M50 152 Q75 145 100 152" fill="none" stroke="oklch(52% 0.015 250)" stroke-width="6" stroke-linecap="round"/>
+      <ellipse cx="75" cy="150" rx="25" ry="4" fill="none" stroke="oklch(64% 0.012 250 / 0.5)" stroke-width="2"/>
+      <path d="M40 40 L66 76" fill="none" stroke="oklch(99% 0.005 250 / 0.9)" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M47 41 L57 56" fill="none" stroke="oklch(99% 0.005 250 / 0.5)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M96 20 C118 14 120 44 102 46 C90 47 90 32 100 32 C106 32 106 40 101 40" fill="none" stroke="url(#lemSI)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M99 23 C114 19 116 40 103 42" fill="none" stroke="oklch(97% 0.08 102 / 0.7)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <h1 class="wordmark">Peyton Pours</h1>
+    <div class="tagline">White-Glove Bartending · Private Parties</div>
+    <p class="lede">Private bar service for Wisconsin's Lake Country — and the menus, signage and printed details that make a night feel <em>designed</em>, not just catered. Same hands behind the bar and behind the artwork.</p>
+    <div class="cta-row">
+      <a href="#inquire" class="btn">Request a Quote</a>
+      <a href="#work" class="btn btn-ghost">See the Work</a>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <p class="kicker">What I do</p>
+      <h2>Two halves of the same night</h2>
+      <p class="section-lede">Most people book a bartender and then scramble for everything else. Here it arrives together — the drinks and the way they're presented, planned as one thing.</p>
+
+      <div class="services">
+        <div class="svc">
+          <div class="svc-num">I</div>
+          <h3>Behind the Bar</h3>
+          <p>White-glove service for private events. A custom cocktail list built around your night, a bar that stays clean and stocked all evening, and someone who reads the room instead of just filling glasses.</p>
+          <ul>
+            <li>Showers, birthdays &amp; anniversaries</li>
+            <li>Dinner parties &amp; lake-house weekends</li>
+            <li>Holiday &amp; graduation parties</li>
+            <li>Shopping list and prep handled ahead</li>
+          </ul>
+        </div>
+
+        <div class="svc">
+          <div class="svc-num">II</div>
+          <h3>Design for the Party</h3>
+          <p>Menus, signage, invitations, place cards, koozies, stickers — designed to your theme and delivered print-ready. Whatever the party needs on paper, it can be made to match.</p>
+          <ul>
+            <li>Custom cocktail &amp; drink menus</li>
+            <li>Welcome signs &amp; bar signage</li>
+            <li>Invitations &amp; save-the-dates</li>
+            <li>Favors, labels &amp; small printed details</li>
+          </ul>
+        </div>
+
+        <div class="svc">
+          <span class="pill">New</span>
+          <div class="svc-num">III</div>
+          <h3>Packer Parties</h3>
+          <p>Game day, done with actual taste. Green and gold that looks intentional — a themed drink list, a designed menu for the spread, and a bar handled so the host gets to watch the game too.</p>
+          <ul>
+            <li>Home openers &amp; playoff watch parties</li>
+            <li>Themed drinks &amp; designed game-day menus</li>
+            <li>Tailgates &amp; basement setups alike</li>
+            <li>Now gauging interest — ask for details</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED WORK ============ -->
+  <section id="work">
+    <div class="wrap">
+      <div class="work-head">
+        <div>
+          <p class="kicker">Selected work</p>
+          <h2>One event, two directions</h2>
+        </div>
+      </div>
+      <p class="section-lede" style="margin-top:6px;">A fortieth birthday in Delafield, themed around a summer beach the hosts had been quoting all year. Rather than guess at the mood, I designed two complete directions and let them pick — same two cocktails, two entirely different nights.</p>
+
+      <div class="pair">
+        <div class="piece">
+          <figure>
+            <img src="assets/work/cousins-postcard.jpg" alt="Cousins Beach postcard menu — a sunset gradient over navy water with a sailboat, hand-lettered greeting, and two cocktails listed below" loading="lazy" width="1400" height="1750">
+            <figcaption>
+              <b>Direction one — the postcard</b>
+              <span>Sun-bleached and sentimental. Vintage travel-postcard framing, handwritten notes from the hosts, a postmark and a lobster stamp. Reads as a keepsake, not a menu.</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="piece">
+          <figure>
+            <img src="assets/work/cousins-cyanotype.jpg" alt="Cousins Beach cyanotype menu — deep navy with white botanical line art, gold rules, and the same two cocktails set in an elegant serif" loading="lazy" width="1400" height="1750">
+            <figcaption>
+              <b>Direction two — the cyanotype</b>
+              <span>The formal cousin. Deep navy, botanical line art, gold hairlines and numbered courses. Same drinks, dressed for dinner rather than the dock.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="note">Both were built to print at full size for the bar and scaled down for table cards. If your party has a theme, a running joke, or a place that means something — that's the raw material. Tell me the story and it becomes the artwork.</p>
+    </div>
+  </section>
+
+  <!-- ============ BRAND PROOF ============ -->
+  <section id="brand">
+    <div class="wrap">
+      <p class="kicker">The proof</p>
+      <h2>This brand is the sample</h2>
+      <p class="section-lede">Peyton Pours is my own project, designed end to end — the martini mark, the palette, the typography, the cards I hand out, the sign that goes to every event, and the page you're reading. Nothing here was bought from a template.</p>
+
+      <div class="proof">
+        <div class="proof-shot">
+          <img src="assets/work/bar-sign.jpg" alt="Peyton Pours 8 by 10 bar sign — pink martini with a lemon twist above the wordmark and the line Poured to Perfection" loading="lazy" width="960" height="1200">
+        </div>
+        <div>
+          <div class="cards4">
+            <img src="assets/work/card-light-front.jpg" alt="Business card, light front" loading="lazy">
+            <img src="assets/work/card-light-back.jpg" alt="Business card, light back" loading="lazy">
+            <img src="assets/work/card-dark-front.jpg" alt="Business card, dark front" loading="lazy">
+            <img src="assets/work/card-dark-back.jpg" alt="Business card, dark back" loading="lazy">
+          </div>
+          <div class="swatches" aria-label="Brand palette">
+            <div style="background:oklch(96% 0.01 60)"></div>
+            <div style="background:oklch(93% 0.045 18)"></div>
+            <div style="background:oklch(72% 0.1 20)"></div>
+            <div style="background:oklch(53% 0.19 8)"></div>
+            <div style="background:oklch(86% 0.15 95)"></div>
+            <div style="background:oklch(30% 0.012 265)"></div>
+          </div>
+          <p class="note" style="margin-top:20px;">A cool grey glass holding a warm pink pour, with one lemon twist as the only note of contrast — then cream, blush, rose, signature pink and charcoal carried across every piece. Cormorant Garamond for display, Work Sans for everything else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INQUIRE ============ -->
+  <section id="inquire">
+    <div class="form-wrap">
+      <div class="card-form">
         <div id="form-view">
-          <h2>Let's plan your gathering!</h2>
+          <h2>Let's plan your gathering</h2>
+          <p class="sub">Tell me about your event and I'll follow up with a custom quote.</p>
           <form id="inquiry" action="https://formspree.io/f/your-form-id" method="POST">
+            <fieldset>
+              <legend>What are you after?</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="interest" value="Bartending"> Bartending</label>
+                <label><input type="checkbox" name="interest" value="Party design"> Party design</label>
+                <label><input type="checkbox" name="interest" value="Packer party"> Packer party</label>
+                <label><input type="checkbox" name="interest" value="Not sure yet"> Not sure yet</label>
+              </div>
+            </fieldset>
             <div class="row">
               <input type="text" name="name" placeholder="Name" required>
               <input type="tel" name="phone" placeholder="Phone">
@@ -101,39 +332,83 @@
               <input type="text" name="event_date" placeholder="Event date">
               <input type="text" name="guest_count" placeholder="Guest count">
             </div>
-            <textarea name="details" rows="4" placeholder="Share a few more details..."></textarea>
-            <button type="submit">Send Inquiry</button>
+            <textarea name="details" rows="4" placeholder="What's the occasion? Any theme, colors, or inside jokes I should know about?"></textarea>
+            <button type="submit" class="btn">Send Inquiry</button>
           </form>
+          <p class="direct">Or reach me at <a href="mailto:peytonpours@gmail.com">peytonpours@gmail.com</a></p>
         </div>
         <div id="thanks-view" class="thanks" style="display:none;">
           <h2>Thank you.</h2>
           <p>Your message is on its way. Peyton will follow up within a couple of days.</p>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer><a href="mailto:peytonpours@gmail.com">peytonpours@gmail.com</a> · © 2026 Peyton Pours</footer>
+</main>
 
-  <script>
-    const form = document.getElementById('inquiry');
-    form.addEventListener('submit', async (e) => {
-      // If Formspree isn't configured yet, just show the thank-you state.
-      if (form.action.includes('your-form-id')) {
-        e.preventDefault();
-        document.getElementById('form-view').style.display = 'none';
-        document.getElementById('thanks-view').style.display = 'block';
-        return;
-      }
-      e.preventDefault();
-      try {
-        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} });
-        if (res.ok) {
-          document.getElementById('form-view').style.display = 'none';
-          document.getElementById('thanks-view').style.display = 'block';
-        } else { form.submit(); }
-      } catch { form.submit(); }
-    });
-  </script>
+<footer>
+  <img class="fmark" src="assets/logo/martini-mark.svg" alt="">
+  <p style="margin:0 0 8px;">Lake Country, Wisconsin · <a href="mailto:peytonpours@gmail.com">peytonpours@gmail.com</a></p>
+  <p style="margin:0;font-size:12px;">Brand, collateral and site designed by Peyton · © 2026 Peyton Pours</p>
+</footer>
+
+<div class="lb" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+</div>
+
+<script>
+  // Sticky nav hairline
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('stuck', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Lightbox for the design pieces
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  let lastFocus = null;
+
+  const openLb = (src, alt) => {
+    lastFocus = document.activeElement;
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lb-close').focus();
+  };
+  const closeLb = () => {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  };
+
+  document.querySelectorAll('.piece img, .proof-shot img, .cards4 img').forEach(img => {
+    img.addEventListener('click', () => openLb(img.src, img.alt));
+  });
+  lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+
+  // Inquiry form
+  const form = document.getElementById('inquiry');
+  const showThanks = () => {
+    document.getElementById('form-view').style.display = 'none';
+    document.getElementById('thanks-view').style.display = 'block';
+    document.getElementById('inquire').scrollIntoView({ block: 'center' });
+  };
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // If Formspree isn't configured yet, just show the thank-you state.
+    if (form.action.includes('your-form-id')) { showThanks(); return; }
+    try {
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} });
+      if (res.ok) { showThanks(); } else { form.submit(); }
+    } catch { form.submit(); }
+  });
+</script>
 </body>
 </html>

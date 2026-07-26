@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <circle cx="100" cy="100" r="100" fill="#fbe4e8"></circle>
+  <g transform="translate(25,10) scale(1)">
+  <defs>
+    <linearGradient id="liqB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b8c8"></stop><stop offset="0.45" stop-color="#f07d9c"></stop><stop offset="1" stop-color="#d94a72"></stop></linearGradient>
+    <linearGradient id="glB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#54585f"></stop><stop offset="0.42" stop-color="#8d9299"></stop><stop offset="0.62" stop-color="#63676e"></stop><stop offset="1" stop-color="#4e525a"></stop></linearGradient>
+    <linearGradient id="lemB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9e77f"></stop><stop offset="0.55" stop-color="#f2d43f"></stop><stop offset="1" stop-color="#d9b41d"></stop></linearGradient>
+  </defs>
+  <ellipse cx="75" cy="153" rx="33" ry="6" fill="#5a5f68" opacity="0.14"></ellipse>
+  <ellipse cx="75" cy="36" rx="49" ry="11" fill="#f6afc0"></ellipse>
+  <path d="M27 37 Q75 52 123 37 L75 92 Z" fill="url(#liqB)"></path>
+  <path d="M31 40 Q75 55 119 40" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2"></path>
+  <path d="M34 44 L75 90" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="1.7"></path>
+  <path d="M116 44 L75 90" fill="none" stroke="#fff" stroke-opacity="0.2" stroke-width="1.2"></path>
+  <path d="M50 47 L75 76" fill="none" stroke="#c0335c" stroke-opacity="0.28" stroke-width="1"></path>
+  <path d="M100 47 L75 76" fill="none" stroke="#c0335c" stroke-opacity="0.2" stroke-width="1"></path>
+  <circle cx="64" cy="52" r="3.1" fill="#fff" opacity="0.9"></circle>
+  <circle cx="83" cy="58" r="2.4" fill="#fff" opacity="0.85"></circle>
+  <circle cx="72" cy="66" r="1.9" fill="#fff" opacity="0.8"></circle>
+  <circle cx="88" cy="47" r="1.6" fill="#fff" opacity="0.75"></circle>
+  <circle cx="56" cy="62" r="1.3" fill="#fff" opacity="0.65"></circle>
+  <circle cx="78" cy="76" r="1.1" fill="#fff" opacity="0.6"></circle>
+  <circle cx="94" cy="55" r="1" fill="#fff" opacity="0.5"></circle>
+  <path d="M23 34 A52 12 0 0 1 127 34" fill="none" stroke="#b3b7bd" stroke-width="4"></path>
+  <path d="M40 27 A52 12 0 0 1 110 27" fill="none" stroke="#f4f5f6" stroke-opacity="0.75" stroke-width="1.6" stroke-linecap="round"></path>
+  <path d="M23 34 A52 12 0 0 0 127 34" fill="none" stroke="url(#glB)" stroke-width="6" stroke-linecap="round"></path>
+  <path d="M24 35 L75 94" fill="none" stroke="#53575e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M75 94 L126 35" fill="none" stroke="#6a6e75" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M29 38 L74 90" fill="none" stroke="#d6d8db" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round"></path>
+  <line x1="75" y1="94" x2="75" y2="150" stroke="#5f636a" stroke-width="6.5" stroke-linecap="round"></line>
+  <line x1="78.5" y1="101" x2="78.5" y2="143" stroke="#c3c6ca" stroke-opacity="0.75" stroke-width="1.5" stroke-linecap="round"></line>
+  <path d="M50 152 Q75 144 100 152" fill="none" stroke="#5b5f66" stroke-width="6.5" stroke-linecap="round"></path>
+  <ellipse cx="75" cy="150" rx="25" ry="4" fill="none" stroke="#9ca0a6" stroke-opacity="0.55" stroke-width="2"></ellipse>
+  <path d="M58 149 Q75 143 88 147" fill="none" stroke="#e3e5e7" stroke-opacity="0.6" stroke-width="1.4" stroke-linecap="round"></path>
+  <path d="M38 39 L64 76" fill="none" stroke="#fff" stroke-opacity="0.92" stroke-width="3.6" stroke-linecap="round"></path>
+  <path d="M46 40 L58 57" fill="none" stroke="#fff" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M108 40 L96 56" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="1.6" stroke-linecap="round"></path>
+  <path d="M96 20 C118 14 120 44 102 46 C90 47 90 32 100 32 C106 32 106 40 101 40" fill="none" stroke="url(#lemB)" stroke-width="6.2" stroke-linecap="round"></path>
+  <path d="M99 23 C114 19 116 40 103 42" fill="none" stroke="#fdf3a8" stroke-opacity="0.72" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M104 27 C112 26 113 36 106 38" fill="none" stroke="#c8a41d" stroke-opacity="0.5" stroke-width="1.2" stroke-linecap="round"></path>
+  </g>
+</svg>
