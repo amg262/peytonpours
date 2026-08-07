@@ -10,6 +10,12 @@ Static one-page site. No build step.
    - Output directory: *(leave empty / `.`)*
 3. Deploy. Then Vercel → Project → Settings → Domains → add `peytonpours.com` and follow the DNS instructions.
 
+## Outage notice banner
+The banner at the top of the page tells visitors the form delivered nothing between
+July 19 and August 7, 2026, and asks anyone who wrote during that window to resend.
+It is temporary — delete the `<aside class="notice">` block and the `.notice` CSS rule
+in `index.html` once it has run its course.
+
 ## Contact form
 Submissions are emailed to **peytonpours@gmail.com** via [FormSubmit](https://formsubmit.co)
 (no account, no API key — the address is the endpoint).
