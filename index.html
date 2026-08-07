@@ -51,10 +51,24 @@
   .thanks h2{font-family:'Cormorant Garamond',serif;font-size:30px;margin:0 0 10px;font-weight:500;}
   .thanks p{font-size:15px;line-height:1.7;color:var(--muted);margin:0;}
   footer{padding:24px 32px;text-align:center;font-size:12px;color:var(--plum);}
-  @media(max-width:480px){.wordmark{font-size:42px;}.hero{padding-top:72px;}.row{flex-direction:column;}}
+  /* Temporary outage notice — safe to delete this rule and the .notice markup once it has run its course. */
+  .notice{background:oklch(94% 0.035 28);border-bottom:1px solid oklch(87% 0.055 25);color:var(--muted);font-size:14px;line-height:1.65;padding:14px 32px;text-align:center;}
+  .notice p{max-width:620px;margin:0 auto;}
+  .notice strong{color:var(--wine);font-weight:600;}
+  .notice a{text-decoration:underline;}
+  @media(max-width:480px){.wordmark{font-size:42px;}.hero{padding-top:72px;}.row{flex-direction:column;}.notice{font-size:13px;padding:12px 20px;}}
 </style>
 </head>
 <body>
+  <!-- Temporary outage notice — remove once it has run its course. -->
+  <aside class="notice">
+    <p><strong>Please note —</strong> a technical problem prevented this form from delivering any
+    messages between July 19 and August 7, 2026. It has been fixed. If you sent an inquiry during
+    that stretch, it never reached me and I'm not ignoring you — please send it again below, or
+    reach me directly at <a href="mailto:peytonpours@gmail.com">peytonpours@gmail.com</a>. My
+    sincere apologies for the silence.</p>
+  </aside>
+
   <main>
     <section class="hero">
       <svg width="122" height="146" viewBox="0 0 150 180" style="margin-bottom:20px;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.18));" aria-hidden="true">
