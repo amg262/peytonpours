@@ -91,7 +91,11 @@
       <div class="card">
         <div id="form-view">
           <h2>Let's plan your gathering!</h2>
-          <form id="inquiry" action="https://formspree.io/f/your-form-id" method="POST">
+          <form id="inquiry" action="https://formsubmit.co/peytonpours@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New event inquiry — Peyton Pours">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;" aria-hidden="true">
             <div class="row">
               <input type="text" name="name" placeholder="Name" required>
               <input type="tel" name="phone" placeholder="Phone">
@@ -117,17 +121,15 @@
 
   <script>
     const form = document.getElementById('inquiry');
+    const button = form.querySelector('button');
+    // FormSubmit's AJAX endpoint keeps the visitor on the page; the plain
+    // endpoint in form.action is the no-JS / network-failure fallback.
+    const endpoint = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
     form.addEventListener('submit', async (e) => {
-      // If Formspree isn't configured yet, just show the thank-you state.
-      if (form.action.includes('your-form-id')) {
-        e.preventDefault();
-        document.getElementById('form-view').style.display = 'none';
-        document.getElementById('thanks-view').style.display = 'block';
-        return;
-      }
       e.preventDefault();
+      button.disabled = true;
       try {
-        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} });
+        const res = await fetch(endpoint, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} });
         if (res.ok) {
           document.getElementById('form-view').style.display = 'none';
           document.getElementById('thanks-view').style.display = 'block';

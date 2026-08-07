@@ -11,8 +11,17 @@ Static one-page site. No build step.
 3. Deploy. Then Vercel → Project → Settings → Domains → add `peytonpours.com` and follow the DNS instructions.
 
 ## Contact form
-The form currently shows a "thank you" state without sending anywhere.
-To receive submissions at peytonpours@gmail.com, create a free form at https://formspree.io
-(point it at that address), then replace `your-form-id` in `index.html`
-(the `action="https://formspree.io/f/your-form-id"`) with your real Formspree endpoint.
-No other changes needed.
+Submissions are emailed to **peytonpours@gmail.com** via [FormSubmit](https://formsubmit.co)
+(no account, no API key — the address is the endpoint).
+
+**One-time activation:** the first time the live form is submitted, FormSubmit emails
+peytonpours@gmail.com a confirmation link. Click it once and every submission after that
+lands in the inbox. Until it's clicked, submissions are not delivered — so after deploying,
+send one test inquiry from the site and then confirm from the inbox.
+
+The visitor stays on the page (the JS posts to FormSubmit's AJAX endpoint and swaps in the
+thank-you state); if JS or the network fails it falls back to a normal form POST, which lands
+on FormSubmit's own thank-you page. Spam handling is a hidden `_honey` honeypot field.
+
+To change the recipient, edit the address in the form's `action` in `index.html` — the AJAX
+endpoint is derived from it. The new address needs its own one-time activation click.
