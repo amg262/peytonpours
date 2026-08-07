@@ -23,5 +23,15 @@ The visitor stays on the page (the JS posts to FormSubmit's AJAX endpoint and sw
 thank-you state); if JS or the network fails it falls back to a normal form POST, which lands
 on FormSubmit's own thank-you page. Spam handling is a hidden `_honey` honeypot field.
 
+A copy of every submission also goes to andrewgunn31@gmail.com via the `_cc` field.
+FormSubmit documents CC only — there is no BCC option — but nothing is exposed to the person
+submitting the form, since they never receive the email; only the two recipients see the
+header. The CC address does not need its own activation click. For more addresses, make `_cc`
+a comma-separated list.
+
+Note that `_cc` puts that address in the public page source, where spam scrapers can find it.
+To avoid that, drop the `_cc` field and set up a forwarding filter in the peytonpours@gmail.com
+inbox instead — same result, address never published.
+
 To change the recipient, edit the address in the form's `action` in `index.html` — the AJAX
 endpoint is derived from it. The new address needs its own one-time activation click.
